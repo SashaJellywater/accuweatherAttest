@@ -2,6 +2,7 @@ package seminar1;
 
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
 import io.restassured.path.json.JsonPath;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -12,6 +13,7 @@ import static io.restassured.RestAssured.given;
 @Feature("Тестирование API Currentconditions API")
 public class CurrentConditionsTest extends AccuweatherAbstractTest{
     @Test
+    @Owner("Киселева Александра")
     void testWeatherData() {
         String response = given()
                 .when()

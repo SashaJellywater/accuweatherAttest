@@ -1,14 +1,15 @@
 package seminar1;
 
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
+import io.qameta.allure.*;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import seminar1.LocationsAPI.Country;
 
+import javax.swing.plaf.synth.Region;
 import java.util.List;
 
 import static io.restassured.RestAssured.given;
@@ -18,6 +19,12 @@ import static io.restassured.RestAssured.given;
 public class CountryListTest extends AccuweatherAbstractTest{
 
     @Test
+    @DisplayName("Тест CountryListTest - поиск объекта List<Country>" )
+    @Description("Тест CountryListTest - поиск List<Country> по ключу EUR")
+    @Link("https://developer.accuweather.com/accuweather-location-api/apis")
+    @Severity(SeverityLevel.BLOCKER)
+    @Story("Получение List<Country> по ключу EUR")
+    @Owner("Киселева Александра")
     void checkCountryInRegion(){
 
         List<Country> result = given()

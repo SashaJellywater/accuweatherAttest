@@ -1,9 +1,9 @@
 package seminar1;
 
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
+import io.qameta.allure.*;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import seminar1.weather.DailyForecast;
 import seminar1.weather.Weather;
@@ -17,6 +17,12 @@ import static io.restassured.RestAssured.given;
 public class OneDayofDailyForecastsTest extends AccuweatherAbstractTest{
 
     @Test
+    @DisplayName("Тест OneDayofDailyForecastsTest - поиск погоды на день" )
+    @Description("Тест OneDayofDailyForecastsTest - получение данных о погоде на день")
+    @Link("https://developer.accuweather.com/accuweather-location-api/apis")
+    @Severity(SeverityLevel.BLOCKER)
+    @Story("Вызов метода получения погоды на день")
+    @Owner("Киселева Александра")
     void testOneDay() {
 
         String result = given().queryParam("apikey", getApiKey())

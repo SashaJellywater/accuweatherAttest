@@ -1,9 +1,9 @@
 package seminar1;
 
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
+import io.qameta.allure.*;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import seminar1.weather.DailyForecast;
 import seminar1.weather.Weather;
@@ -15,7 +15,14 @@ import static io.restassured.RestAssured.given;
 @Epic("Тестирование проекта accuweather.com")
 @Feature("Тестирование API Weather API")
 public class FiveDaysofDailyForecastsTest extends AccuweatherAbstractTest{
+
     @Test
+    @DisplayName("Тест FiveDaysTest - поиск погоды за 5 дней" )
+    @Description("Тест FiveDaysTest - получение данных о погоде за 5 дней")
+    @Link("https://developer.accuweather.com/accuweather-location-api/apis")
+    @Severity(SeverityLevel.BLOCKER)
+    @Story("Вызов метода получения погоды за 5 дней")
+    @Owner("Киселева Александра")
     void testFiveDays() {
 
         Weather weather = given().queryParam("apikey", getApiKey())

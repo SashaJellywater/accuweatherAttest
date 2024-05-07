@@ -1,9 +1,9 @@
 package seminar1;
 
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
+import io.qameta.allure.*;
 import io.restassured.path.json.JsonPath;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -11,7 +11,14 @@ import static io.restassured.RestAssured.given;
 @Epic("Тестирование проекта accuweather.com")
 @Feature("Тестирование API Currentconditions API")
 public class AllDayHistoricalCurrentConditionsTest extends AccuweatherAbstractTest {
+
     @Test
+    @DisplayName("Тест AllDayHistoricalCurrentConditionsTest - поиск погоды за прошедшие 24 часа" )
+    @Description("Тест AllDayHistoricalCurrentConditionsTest - получение данных о погоде за прошедшие 24 часа")
+    @Link("https://developer.accuweather.com/accuweather-location-api/apis")
+    @Severity(SeverityLevel.BLOCKER)
+    @Story("Вызов метода получения погоды за прошедшие 24 часа")
+    @Owner("Киселева Александра")
     void testDayHistoricalCurrent() {
         String response = given()
                 .when()

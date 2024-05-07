@@ -1,9 +1,9 @@
 package seminar1.sem;
 
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
+import io.qameta.allure.*;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import seminar1.AccuweatherAbstractTest;
 import seminar1.LocationsAPI.TopCities.AdministrativeArea;
@@ -14,7 +14,14 @@ import static io.restassured.RestAssured.given;
 @Epic("Тестирование проекта accuweather.com")
 @Feature("Тестирование API Location API")
 public class GetLocationTest extends AccuweatherAbstractTest {
+
     @Test
+    @DisplayName("Тест GetLocationTest - поиск объекта Location" )
+    @Description("Тест GetLocationTest - поиск объекта Location по ключу Samara")
+    @Link("https://developer.accuweather.com/accuweather-location-api/apis")
+    @Severity(SeverityLevel.BLOCKER)
+    @Story("Получение объекта Location для Samara")
+    @Owner("Киселева Александра")
     void getLocation(){
 
         List<AdministrativeArea.Location> result = given()
